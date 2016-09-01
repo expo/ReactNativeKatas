@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { takeSnapshot } from 'exponent';
+import { takeSnapshotAsync } from 'exponent';
 
 export default (Subject) => {
   return class extends React.Component {
@@ -10,10 +10,10 @@ export default (Subject) => {
       requestAnimationFrame(async () => {
         try {
           if (!referenceShot) {
-            let base64ReferenceImage = await takeSnapshot(this._view, {format: 'png', result: 'base64', quality: 1.0});
+            let base64ReferenceImage = await takeSnapshotAsync(this._view, {format: 'png', result: 'base64', quality: 1.0});
             this.props.onSnapshot(base64ReferenceImage);
           } else {
-            let base64AttemptImage = await takeSnapshot(this._view, {format: 'png', result: 'base64', quality: 1.0});
+            let base64AttemptImage = await takeSnapshotAsync(this._view, {format: 'png', result: 'base64', quality: 1.0});
 
             if (referenceShot === base64AttemptImage) {
               this.props.onCompared(true);
