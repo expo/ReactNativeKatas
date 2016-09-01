@@ -5,7 +5,7 @@ import ReactNative, {
   View,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons as Icon } from '@exponent/vector-icons'
 import colors from '@/runner/colors'
 
 
@@ -16,7 +16,7 @@ import colors from '@/runner/colors'
 // Hint: You have to combine multiple properties
 //
 
-const FillAll = (props)=>{
+const FillAll = (props) => {
   return (
     <View style={styles.container}>
       <Icon style={{color:'white'}} name='ios-bulb-outline' size={120} />

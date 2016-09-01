@@ -5,7 +5,7 @@ import ReactNative, {
   View,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons as Icon } from '@exponent/vector-icons'
 import colors from '@/runner/colors'
 
 const Disc = (props)=><View style={[{margin:10, backgroundColor:'white', borderRadius:30, width:60, height:60}, props.style]}/>

@@ -1,19 +1,18 @@
 {
   "name": "rnk",
   "version": "0.0.1",
+  "main": "main.js",
   "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
-  },
   "dependencies": {
+    "@exponent/vector-icons": "^1.0.1",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "exponent": "file:///Users/brent/universe/libraries/exponent-sdk",
     "fs-extra": "^0.30.0",
     "glob": "^7.0.3",
     "node-resemble-js": "0.0.5",
     "ramda": "^0.21.0",
-    "react": "15.0.2",
-    "react-native": "^0.26.3",
-    "react-native-fs": "^1.4.0",
-    "react-native-navbar": "^1.5.0",
-    "react-native-vector-icons": "^2.0.3"
+    "react": "15.2.1",
+    "react-native": "github:exponentjs/react-native#sdk-9.0.0",
+    "react-native-navbar": "^1.5.0"
   }
 }

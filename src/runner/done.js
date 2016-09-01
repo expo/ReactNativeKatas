@@ -4,7 +4,7 @@ import ReactNative, {
   Text,
   View,
 } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons as Icon } from '@exponent/vector-icons'
 export default ()=><View style={styles.container}>
                      <Icon name="ios-checkmark-circle-outline" size={120} style={{color:'white'}}/>
                      <Text style={{fontSize:40, color:'white'}}>All Done!</Text>

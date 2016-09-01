@@ -6,7 +6,7 @@ import ReactNative, {
   TouchableOpacity,
 } from 'react-native';
 import Box from './box'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons as Icon } from '@exponent/vector-icons'
 import colors from '@/runner/colors'
 
 

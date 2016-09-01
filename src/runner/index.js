@@ -6,6 +6,10 @@ import ReactNative, {
   AsyncStorage,
 } from 'react-native'
 
+import Exponent, {
+  Font,
+} from 'exponent';
+import { Ionicons } from '@exponent/vector-icons';
 import Done from './done'
 import Nav from './nav'
 
@@ -17,6 +21,7 @@ class Runner extends Component {
     }
     this._advance = this._advance.bind(this)
   }
+
   componentDidMount(){
     console.log("mounting")
     if(this.state.index == null){
@@ -24,10 +29,18 @@ class Runner extends Component {
         this.setState({index: parseInt(index || '0')})
       })
     }
+    this._bootstrap();
   }
+
+  _bootstrap = async () => {
+    await Font.loadAsync(Ionicons.font);
+    this.setState({assetsAreLoaded: true});
+  }
+
   componentWillUnmount(){
     console.log("unmounitng")
   }
+
   _advance(){
     console.log(`OK: ${this.props.bundle[this.state.index].displayName}`)
     let bundle = this.props.bundle
@@ -46,6 +59,10 @@ class Runner extends Component {
 
 
   render(){
+    if (!this.state.assetsAreLoaded) {
+      return <Exponent.Components.AppLoading />;
+    }
+
     const bundle = this.props.bundle
     if(this.state.index >= bundle.length){
       return <Done/>
